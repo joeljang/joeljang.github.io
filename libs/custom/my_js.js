@@ -87,8 +87,66 @@ $(document).ready(function() {
       $(this).html(newContent)
     })
   }
-
-
+  
   init();
 
+});
+
+function toggleNews() {
+  var moreNews = document.getElementById("news-more");
+  var toggle = document.getElementById("news-toggle");
+  
+  if (moreNews.style.display === "none") {
+    moreNews.style.display = "block";
+    toggle.innerHTML = "Show less ↑";
+  } else {
+    moreNews.style.display = "none";
+    toggle.innerHTML = "Show more ↓";
+  }
+}
+
+function togglePaper(element) {
+  var details = element.nextElementSibling;
+  var isActive = element.classList.contains('active');
+  
+  // Close all others (optional - remove these 4 lines if you want multiple open)
+  document.querySelectorAll('.paper-row.active').forEach(function(row) {
+    row.classList.remove('active');
+    row.nextElementSibling.classList.remove('show');
+  });
+  
+  // Toggle clicked one
+  if (!isActive) {
+    element.classList.add('active');
+    details.classList.add('show');
+  }
+}
+
+// Fetch GitHub stars for code buttons
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.code-btn').forEach(function(btn) {
+    var repoUrl = btn.getAttribute('data-repo');
+    
+    // Extract owner/repo from GitHub URL
+    var match = repoUrl.match(/github\.com\/([^\/]+\/[^\/]+)/);
+    if (match) {
+      var repo = match[1].replace(/\/$/, ''); // remove trailing slash if any
+      
+      fetch('https://api.github.com/repos/' + repo)
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+          if (data.stargazers_count !== undefined) {
+            var stars = data.stargazers_count;
+            // Format: 1.2k for thousands
+            if (stars >= 1000) {
+              stars = (stars / 1000).toFixed(1) + 'k';
+            }
+            btn.innerHTML = 'Code <span class="star-count">★ ' + stars + '</span>';
+          }
+        })
+        .catch(function(err) {
+          // Keep original "Code" text if fetch fails
+        });
+    }
+  });
 });

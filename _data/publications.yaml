@@ -1,6 +1,40 @@
 papers:
-  - title: "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots"
+  - title: "GRAPE: Generalizing Robot Policy via Preference Alignment"
+    year: "2026"
+    authors: "Zijian Zhang*, Kaiyuan Zheng*, Zhaorun Chen*, <b><u>Joel Jang</u></b>, Yi Li, Chaoqi Wang, Mingyu Ding, Dieter Fox, Huaxiu Yao"
+    venue: "ICRA 2026"
+    paper_pdf: "https://arxiv.org/abs/2411.19309"
+    code: "https://github.com/aiming-lab/GRAPE"
+    selected: y
+
+  - title: "Comsos-Predict2.5: World Simulation with Video Foundation Models for Physical AI"
     year: "2025"
+    authors: "NVIDIA"
+    venue: "Technical Whitepaper"
+    paper_pdf: "https://arxiv.org/abs/2511.00062"
+    code: "https://github.com/nvidia-cosmos/cosmos-predict2.5"
+    selected: y
+
+  - title: "ReAgent-V: A Reward-Driven Multi-Agent Framework for Video Understanding"
+    authors: "Yiyang Zhou, Yangfan He, Yaofeng Su, Siwei Han, <b><u>Joel Jang</u></b>, Gedas Bertasius, Mohit Bansal, Huaxiu Yao"
+    venue: "NeurIPS 2025"
+    paper_pdf: "https://arxiv.org/abs/2506.01300"
+    selected: y
+
+  - title: "FLARE: Robot Learning with Implicit World Modeling"
+    authors: "Ruijie Zheng*, Jing Wang*, Scott Reed*, Johan Bjorck, Yu Fang, Fengyuan Hu, <b><u>Joel Jang</u></b>, Kaushil Kundalia, Zongyu Lin, Loic Magne, Avnish Narayan, You Liang Tan, Guanzhi Wang, Qi Wang, Jiannan Xiang, Yinzhen Xu, Seonghyeon Ye, Jan Kautz, Furong Huang, Yuke Zhu†, Linxi Fan†"
+    venue: "CoRL 2025"
+    paper_pdf: "https://arxiv.org/abs/2505.15659"
+    selected: y
+
+  - title: "DreamGen: Unlocking Generalization in Robot Learning through Video World Models"
+    authors: "<b><u>Joel Jang</u></b>*, Seonghyeon Ye*, Zongyu Lin*, Jiannan Xiang*, Johan Bjorck, Ruijie Zheng, Yu Fang, Fengyuan Hu, Spencer Huang, Kaushil Kundalia, Yen-Chen Lin, Loic Magne, Ajay Mandlekar, Avnish Narayan, You Liang Tan, Guanzhi Wang, Jing Wang, Qi Wang, Yinzhen Xu, Xiaohui Zeng, Kaiyuan Zheng, Ming-Yu Liu, Luke Zettlemoyer, Dieter Fox, Jan Kautz, Scott Reed†, Yuke Zhu†, Linxi Fan†"
+    venue: "CoRL 2025"
+    paper_pdf: "https://arxiv.org/abs/2505.12705"
+    code: "https://github.com/NVIDIA/GR00T-Dreams"
+    selected: y
+
+  - title: "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots"
     authors: "NVIDIA GEAR Team"
     venue: "Technical Whitepaper"
     paper_pdf: "https://arxiv.org/abs/2503.14734"
@@ -36,7 +70,7 @@ papers:
 
   - title: "The BiGGen Bench: A Principled Benchmark for Fine-grained Evaluation of Language Models with Language Models"
     authors: "Seungone Kim, Juyoung Suk, Ji Yong Cho, Shayne Longpre, Chaeeun Kim, Dongkeun Yoon, Guijin Son, Yejin Cho, Sheikh Shafayat, Jinheon Baek, Sue Hyun Park, Hyeonbin Hwang, Jinkyung Jo, Hyowon Cho, Haebin Shin, Seongyun Lee, Hanseok Oh, Noah Lee, Namgyu Ho, Se June Joo, Miyoung Ko, Yoonjoo Lee, Hyungjoo Chae, Jamin Shin, <b><u>Joel Jang</u></b>, Seonghyeon Ye, Bill Yuchen Lin, Sean Welleck, Graham Neubig, Moontae Lee, Kyungjae Lee, Minjoon Seo"
-    venue: "NAACL 2025"
+    venue: "NAACL 2025 (best paper)"
     paper_pdf: "https://hamster-robot.github.io/"
     selected: y
     
@@ -160,7 +194,7 @@ papers:
     year: "2022"
     image: "/assets/publications/2022_neurips/inverse.png"
     authors: "<b><u>Joel Jang*</u></b>, Seonghyeon Ye*, Minjoon Seo"
-    venue: "NeurIPS 2022 Workshop on Transfer Learning for NLP (TL4NLP)"
+    venue: "NeurIPS 2022 Workshop (TL4NLP)"
     paper_pdf: "https://proceedings.mlr.press/v203/jang23a/jang23a.pdf"
     code: "https://github.com/joeljang/negated-prompts-for-llms"
     slides: "https://docs.google.com/presentation/d/1TfVQA0evQ58DeDDzzLAxtryk3J5EIoiHiAPQJgaFZKg/edit?usp=sharing"
