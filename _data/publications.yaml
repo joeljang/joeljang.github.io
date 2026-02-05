@@ -1,6 +1,13 @@
 papers:
-  - title: "GRAPE: Generalizing Robot Policy via Preference Alignment"
+  - title: "DreamZero: World Action Models are Zero-shot Policies"
     year: "2026"
+    authors: "Seonghyeon Ye†, Yunhao Ge*, Kaiyuan Zheng*, Shenyuan Gao*, Sihyun Yu*, George Kurian*, Suneel Indupuru*, You Liang Tan*, Chuning Zhu, Jiannan Xiang, Ayaan Malik, Kyungmin Lee, William Liang, Nadun Ranawaka, Jiasheng Gu, Yinzhen Xu, Guanzhi Wang, Fengyuan Hu, Avnish Narayan, Johan Bjorck, Jing Wang, Gwanghyun Kim, Dantong Niu, Ruijie Zheng, Yuqi Xie, Jimmy Wu, Qi Wang, Ryan Julian, Danfei Xu, Yilun Du, Yevgen Chebotar, Scott Reed, Jan Kautz, Yuke Zhu†, Linxi \"Jim\" Fan†, <b><u>Joel Jang</u></b>†"
+    venue: "Preprint"
+    paper_pdf: "https://dreamzero0.github.io/DreamZero.pdf"
+    code: "https://github.com/dreamzero0/dreamzero"
+    selected: y
+
+  - title: "GRAPE: Generalizing Robot Policy via Preference Alignment"
     authors: "Zijian Zhang*, Kaiyuan Zheng*, Zhaorun Chen*, <b><u>Joel Jang</u></b>, Yi Li, Chaoqi Wang, Mingyu Ding, Dieter Fox, Huaxiu Yao"
     venue: "ICRA 2026"
     paper_pdf: "https://arxiv.org/abs/2411.19309"
