@@ -21,7 +21,7 @@ permalink: /world-models-for-robotics
         font-size: 1.5rem;
     }
     }
-    
+
     .blog-post .acknowledgments {
         margin-top: 50px;
         padding-top: 25px;
@@ -246,6 +246,8 @@ permalink: /world-models-for-robotics
   <p><strong>The inverse dynamics problem.</strong> Even with perfect world prediction, we still need to map predicted futures to motor commands. Our experiments suggest this implicit inverse dynamics model (IDM) can be learned efficiently, but the data requirements likely will scale with the system's degrees of freedom. As humanoid robots approach human-level dexterity—dozens of actuators per hand, compliant joints, complex dynamics—the IDM learning problem grows harder. How much actual robot play data is truly needed? We don't yet know.</p>
 
   <p><strong>Multimodal sensing.</strong> Humans don't just see—we feel pressure, temperature, texture, and pain. We hear objects make contact. We sense our body's position through proprioception. Current world models operate primarily in the visual domain. Our hypothesis, based on DreamZero's success in transferring from video to action, is that video can serve as the high-data regime modality that enables transfer to lower-data modalities, such as tactile and force sensing, the same way it did for the action modality. But this remains to be demonstrated.</p>
+
+    <p><strong>Non-intrusive human data capture.</strong> The richer the sensory data you want—even just egocentric video from head or wrist-mounted cameras—the harder it is to make capture truly unobtrusive. And if the rig becomes too specialized, you've essentially reinvented UMI: dedicated operators with purpose-built equipment, losing the scalability advantage of passively recording natural behavior. Consumer smart glasses are one potential path—if products like Meta's Ray-Ban glasses gain mass adoption, egocentric video becomes a byproduct of daily life. But we're not there yet, for vision or any other modality.</p>
 
   <p><strong>Long-horizon coherence.</strong> Predicting the next few seconds of video is achievable today. Predicting the next few hours—the timescale of meaningful human tasks—is harder, but the path is visible: longer context windows, better architectures, more efficient attention. We're making real progress. But true persistent memory? Coherence over days, weeks, the full arc of a human life? That's not a scaling problem. That's an open research question we don't yet know how to answer.</p>
 
