@@ -1,0 +1,298 @@
+---
+layout: default
+title: "World Models and the Data Problem in Robotics"
+permalink: /world-models-for-robotics
+---
+
+<style>
+    .blog-post .acknowledgments {
+        margin-top: 50px;
+        padding-top: 25px;
+        border-top: 1px solid #e2e8f0;
+        font-size: 0.85em;
+        color: #94a3b8;
+        line-height: 1.7;
+        font-style: italic;
+    }
+
+    .blog-post h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 50px;
+        margin-bottom: 16px;
+        color: #1a1a2e;
+        font-family: 'Georgia', 'Times New Roman', serif;
+    }
+
+    .blog-post p,
+    .blog-post ul,
+    .blog-post .blog-subtitle,
+    .blog-post .blog-disclaimer,
+    .blog-post .acknowledgments {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 17px;
+    }
+
+  .header { display: none; }
+  .footer { display: none; }
+
+  .blog-post {
+    max-width: 720px;
+    margin: 60px auto 0 auto;
+    padding: 0 20px 80px 20px;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #1a1a2e;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .blog-post h1.blog-title {
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    color: #1a1a2e;
+  }
+
+  .blog-post .blog-subtitle {
+    font-size: 1.15em;
+    color: #4a5568;
+    font-style: italic;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .blog-post .blog-disclaimer {
+    font-size: 0.85em;
+    color: #94a3b8;
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+
+  .blog-post p {
+    margin-bottom: 18px;
+    color: #4a5568;
+  }
+
+  .blog-post a {
+    color: #059669;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .blog-post a:hover {
+    color: #047857;
+  }
+
+  .blog-post strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  .blog-post ul {
+    margin-bottom: 18px;
+    padding-left: 24px;
+    color: #4a5568;
+  }
+
+  .blog-post ul li {
+    margin-bottom: 6px;
+  }
+
+  .blog-post .acknowledgments {
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.92em;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .blog-post .back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #059669;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+  }
+
+  .blog-post .back-link:hover {
+    color: #047857;
+  }
+</style>
+
+<div class="blog-post">
+
+  <a href="/" class="back-link">← Home</a>
+
+  <h1 class="blog-title">World Models and the Data Problem in Robotics</h1>
+  <p class="blog-subtitle">Why human experience is the only scalable path to Physical AGI</p>
+  <p class="blog-disclaimer">Disclaimer: The views expressed here are my own and do not represent Nvidia, or the GEAR group.</p>
+
+  <!-- ========== Section 1 ========== -->
+  <h2>The Inconvenient Truth About AI Progress</h2>
+
+  <p>Every major breakthrough in artificial intelligence comes down to one thing: data. GPT-3 didn't emerge from architectural innovation alone—it emerged from training on the collective written output of humanity. Diffusion models didn't learn to generate photorealistic images through clever loss functions alone—they learned by ingesting billions of images created by humans over decades. The pattern is unmistakable: <strong>intelligence, artificial or otherwise, is a <a href="https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf" target="_blank">function of experience.</a></strong></p>
+
+  <p>This observation leads to an uncomfortable question for the robotics community: if data is the bottleneck for intelligence, and robot data is notoriously expensive to collect, how will we ever achieve Physical AGI?</p>
+
+  <p>The answer, I believe, points in only one direction.</p>
+
+  <!-- ========== Section 2 ========== -->
+  <h2>The Data Problem in Robotics</h2>
+
+  <p>The fundamental challenge to achieving Physical AGI is not hardware, not algorithms, not compute—it's data. Consider the asymmetry: LLMs were trained on text representing the accumulated knowledge of billions of people across human history. Vision models learned from images captured by billions of cameras over decades. But robot learning? We're celebrating when a lab collects thousands of hours of teleoperation data.</p>
+
+  <p>The gap isn't just about scale—it's about <strong>diversity.</strong> Text and vision data are "in-the-wild": scraped from the internet, captured incidentally, reflecting the full messiness of human life across cultures, contexts, and edge cases. Robot data is on-demand: collected intentionally in controlled settings, limited to the scenarios researchers choose to demonstrate. This inherently constrains the distribution. You can't teleoperate your way to the long tail.</p>
+
+  <p><strong>Teleoperation doesn't scale.</strong> It requires expensive hardware, skilled operators, physical space, and—crucially—time that cannot be parallelized beyond the number of robots you own. Even the most ambitious data collection efforts represent a tiny fraction of the experience needed for physical AGI. Approaches like <a href="https://umi-gripper.github.io/">UMI</a> (<a href="https://www.sunday.ai/journal/no-robot-data">Sunday Robotics</a>, <a href="https://generalistai.com/blog/nov-04-2025-GEN-0">Generalist</a>) have made impressive strides by enabling portable, in-the-wild data collection without requiring actual robots—but they still require dedicated human demonstrators deliberately performing tasks with specialized hardware, and their tightly integrated vertical stacks mean the collected data must be carefully calibrated for replay on specific target robots, which fundamentally limits scale.</p>
+
+  <p>So where does the data come from?</p>
+
+  <!-- ========== Section 3 ========== -->
+  <h2>The Only Scalable Source: Humans</h2>
+
+  <p><strong>Humans are robots that have already been deployed at scale.</strong>  There are 8 billion of us, each accumulating roughly 16 waking hours of sensorimotor experience per day—manipulating objects, navigating environments, using tools, interacting with each other. All of it is recordable.</p>
+
+  <p>The path forward is obvious: we need to capture this data.</p>
+
+  <p>Recent advances in human egocentric video datasets point toward this future. The rapid emergence of human egocentric data vendors suggests the market sees what we see. But let's think bigger. Imagine we had <strong>100 million hours</strong> of human egocentric video data. Sounds like a lot? Given a life expectancy of 76 years, that's roughly 150 human lifetimes of recorded experience.</p>
+
+  <p>For comparison, LLM training data represents the written output of <em>billions</em> of people over centuries. We're not even close to saturating the human experience data regime—we're barely scratching the surface.</p>
+
+  <p>Of course, video alone doesn't capture the full richness of physical interaction—forces, contacts, tactile feedback are all missing. My hypothesis is that video can serve as the high-data-regime modality that enables transfer to these lower-data modalities.</p>
+
+  <!-- ========== Section 4 ========== -->
+  <h2>World Models: The Missing Paradigm</h2>
+
+  <p>Raw video data is necessary but not sufficient. The question is: what do we do with 100 million hours of human footage?</p>
+
+  <p>The answer, in my view, lies in <strong>world modeling</strong>. The standard approach—mapping observations directly to actions—is, in my opinion, a dead end: it locks learned knowledge to the specific embodiment and viewpoint it was collected on, offers no mechanism for verifying what the model has actually understood, and provides no path to leveraging the ocean of action-free human video that dwarfs any robot dataset. It may produce impressive demos, but I believe it will plateau well short of the generalization needed for real deployment. We should instead train models to predict how the world evolves. Physics. Affordances. Cause and effect. Video is the ideal medium for this: it's dense, captures spatial and temporal relationships, and implicitly encodes the dynamics of physical interaction.</p>
+
+  <p>Our recent work on <a href="https://dreamzero0.github.io/">DreamZero</a> demonstrates this principle. By training a 14B parameter autoregressive video diffusion model to predict future frames and actions in a single forward pass, we showed that <strong>world modeling enables generalization that pure action prediction cannot achieve</strong>. Why generate pixels at all? Because generating pixels is the only way for humans to verify that the model truly understands how to perform a task. If it can accurately predict what happens next—the object moving, the hand grasping, the cup tilting—it must have internalized the underlying dynamics. The pixels are the proof, and that proof translates to action.</p>
+
+  <p>The training objective we should aspire to is breathtaking in its simplicity and difficulty: <strong>given N hours of history, predict the next N hours of video.</strong> It's <a href="https://x.com/DrJimFan/status/2018754323141054786?s=20">next-token prediction for the physical world</a>—simple to state, extraordinarily hard to solve. Think about what this requires: remembering the past, understanding the present, and predicting the future. This is what humans do when they plan. It's what we call <em>thinking</em>.</p>
+
+  <!-- ========== Section 5 ========== -->
+  <h2>From Human World Model to Physical Robot: The Transfer Problem</h2>
+
+  <p>Let's assume we successfully train a massive autoregressive video world model on 100 million hours of human egocentric data—a milestone I expect we'll hit within the next few years. It understands how humans accomplish physical tasks. It can predict how scenes will evolve. It has internalized the "how" of physical intelligence, learned from 150 lifetimes of human experience.</p>
+
+  <p><strong>But raw video prediction isn't enough.</strong> A true world model must predict the next state conditioned on action—otherwise it's just a physics simulator you can observe but not steer. But what does "action" mean for a world model trained on human video? We don't have joint torques or end-effector velocities—humans don't come with an action API. What we do have is <em>language</em>: a natural, scalable way to express intent that can be paired with any video. The 100 million hours must be densely annotated with captions that segment continuous experience into meaningful subtask intervals—"reaching for the cup," "grasping the handle," "pouring"—teaching the model that when a human intends to do X, the world evolves in a predictable way. Language becomes both the training signal that teaches intentional action and the interface through which humans later command the robot.</p>
+
+  <p><strong>Now what?</strong> The model exists in silicon. To act in the physical world, it needs a body. Can physical understanding learned from human video transfer to a robot?</p>
+
+  <p><strong>We already have evidence that it does.</strong> DreamZero generalizes zero-shot to unseen tasks (see the <a href="https://dreamzero0.github.io/evals_gallery/">gallery of 100+ zero-shot tasks</a>)—untying shoelaces, ironing, shaking hands—motions no robot in the training data ever performed. The knowledge came from the video diffusion backbone, pretrained on web-scale data that is overwhelmingly human. When DreamZero generates a video of a robot untying a shoelace and executes the corresponding actions, it is transferring physical understanding from human experience to a robot body.</p>
+
+  <p><strong>But let's be honest:</strong> today's "zero-shot" is what I still consider to be the 'AI Slop' phase. The robot attempts the right motion—correct approach direction, plausible contact points—but doesn't execute accurately or reliably. The model is doing two hard things at once: (1) transferring physical knowledge from pretraining where humans perform these tasks, usually in an exocentric view instead of egocentric, and (2) adapting it to an embodiment with completely different kinematics. The transfer is real but lossy.</p>
+
+  <p><strong>Targeted human egocentric data attacks the first problem.</strong> The pretrained model learned human physical knowledge incidentally—from internet video that happened to contain manipulation amid talking heads and landscapes. Egocentric data collected deliberately for robotics would sharpen the transfer: first-person viewpoints closer to robot cameras, manipulation-dense footage, task-relevant temporal structure. This doesn't introduce a new mechanism—it amplifies the one already working, so less capacity is spent filtering noise and more goes toward bridging the embodiment gap.</p>
+
+  <p><strong>DreamZero's cross-embodiment experiments confirm this logic.</strong> Adding just 10–20 minutes of video-only demonstrations—from a different robot or from humans—improved unseen task performance by over 42%. No action labels, just video. More surprisingly, adapting to an entirely new robot required only <em>30 minutes</em> of play data while transferring zero-shot generalization. Physical dynamics transferred; only the kinematics needed relearning. Critically, both results depended on similar camera viewpoints across embodiments—wrist and head-mounted cameras that approximate a shared visual perspective. This is precisely why egocentric human data is the right bet: a simple wrist or head-mounted camera is all it takes to capture the first-person, hand-centric viewpoint that maximizes visual overlap with robot observations.</p>
+
+  <p><strong>This is the paradigm shift.</strong> The standard approach—mapping observations directly to actions—locks learned knowledge to a single embodiment. World models break that coupling. They learn how the world works, not just how one robot should move, making their knowledge a shared asset across bodies. Train once on human experience, deploy everywhere with calibration. Humanoids minimize the remaining embodiment gap, but even dramatically different robots can benefit with modest adaptation. How far that adaptation can stretch remains an open question, which naturally transitions to the next topic.</p>
+
+  <!-- ========== Section 6 ========== -->
+  <h2>The Case for Humanoids</h2>
+
+  <p>This brings us to the thesis of this post. If:</p>
+
+  <ul>
+    <li>Physical AGI requires data at scale</li>
+    <li>The only scalable data source is human activity</li>
+    <li>World models can learn physical understanding from human video</li>
+    <li>Transfer efficiency depends on embodiment similarity</li>
+  </ul>
+
+  <p>Then the optimal robot embodiment is one that maximizes similarity to humans.</p>
+
+  <p>But "optimal" depends on what's feasible. Here's the tension:</p>
+
+  <p><strong>The hardware path.</strong> If humanoid hardware matures quickly—reliable actuators, dexterous hands, robust locomanipulation—then the minimal transfer gap makes humanoids the obvious choice. Why collect embodiment-specific data when the embodiment already matches?</p>
+
+  <p><strong>The algorithm path.</strong> If embodiment adaptation algorithms improve faster than hardware, the transfer gap matters less. A world model that can calibrate to a wheeled manipulator in 30 minutes of play data doesn't need a humanoid body to leverage human experience. Intermediate forms become viable indefinitely.</p>
+
+  <p><strong>But adaptation isn't free.</strong> Consider picking up a credit card from a flat table. With a dexterous hand, you'd slide a fingertip under the edge and pinch. With a parallel gripper, you'd push the card to the table's edge and clamp it from the side. Same task, completely different motion strategy. A world model trained on human video has seen the first approach a million times—but the second must be learned from embodiment-specific data. The further you stray from human form, the more of these gaps you accumulate.</p>
+
+  <p>We don't know which will win. My intuition is that hardware is the slower variable—iteration cycles are brutal, supply chains are complex, and the path from prototype to product is long. But I'd love to be proven wrong.</p>
+
+  <p>What's certain is this: the world understanding learned from human video will power robots of all forms. Humanoids minimize the remaining gap. Whether that gap is worth closing depends on a race we're only beginning to run.</p>
+
+  <!-- ========== Section 7 ========== -->
+  <h2>The Remaining Challenges</h2>
+
+  <p>I don't want to oversell the simplicity of this path. Significant challenges remain, ones we have to relentlessly tackle for the next few years.</p>
+
+  <p><strong>The inverse dynamics problem.</strong> Even with perfect world prediction, we still need to map predicted futures to motor commands. Our experiments suggest this implicit inverse dynamics model (IDM) can be learned efficiently, but the data requirements likely will scale with the system's degrees of freedom. As humanoid robots approach human-level dexterity—dozens of actuators per hand, compliant joints, complex dynamics—the IDM learning problem grows harder. How much actual robot play data is truly needed? We don't yet know.</p>
+
+  <p><strong>Multimodal sensing.</strong> Humans don't just see—we feel pressure, temperature, texture, and pain. We hear objects make contact. We sense our body's position through proprioception. Current world models operate primarily in the visual domain. Our hypothesis, based on DreamZero's success in transferring from video to action, is that video can serve as the high-data regime modality that enables transfer to lower-data modalities, such as tactile and force sensing, the same way it did for the action modality. But this remains to be demonstrated.</p>
+
+  <p><strong>Long-horizon coherence.</strong> Predicting the next few seconds of video is achievable today. Predicting the next few hours—the timescale of meaningful human tasks—is harder, but the path is visible: longer context windows, better architectures, more efficient attention. We're making real progress. But true persistent memory? Coherence over days, weeks, the full arc of a human life? That's not a scaling problem. That's an open research question we don't yet know how to answer.</p>
+
+  <!-- ========== Section 8 ========== -->
+  <h2>The Vision</h2>
+
+  <p>Close your eyes and imagine the following:</p>
+
+  <p>A video world model trained on 100 million hours of human experience. It has watched people cook, clean, build, repair, care for each other, navigate cities, and use every tool humans have invented. It understands not just what happens, but why and how.</p>
+
+  <p>This model is deployed in a humanoid robot whose body mirrors human kinematics. Because the embodiment matches the training distribution, the model can immediately leverage its vast experience. With a few hours of play data to 'calibrate' its proprioception, it can begin to act—just as a skilled human teleoperator adapts to a new robot in hours, not weeks.</p>
+
+  <p>The robot doesn't need to be teleoperated through every task. It has already watched humans do those tasks a million times. It knows how the world responds to manipulation. It can perceive, predict, plan, and execute.</p>
+
+  <p>This is Physical AGI. And the path to get there runs through world models trained on the only data source large enough to matter—the physical experience of 8 billion humans.</p>
+
+  <!-- ========== Acknowledgments ========== -->
+  <div class="acknowledgments">
+    <p>This post draws on our previous work <a href="https://research.nvidia.com/labs/gear/dreamgen/">DreamGen</a>, which first showed that video world models can serve as synthetic data generators enabling generalization, and our recent work <a href="https://dreamzero0.github.io/">DreamZero</a>, a World Action Model that unifies video prediction and action generation to enable zero-shot generalization.</p>
+    <p>I would especially like to thank Danfei Xu for providing some of the inspirations during our conversations. I would also like to thank Seonghyeon Ye, Youliang Tan, Chuning Zhu, Yevgen Chebotar, Yilun Du, and Jim Fan for their comments and feedback on this essay.</p>
+  </div>
+
+    <!-- Comments -->
+    <div style="max-width: 720px; margin: 40px auto 0 auto; padding: 0 20px;">
+        <script src="https://giscus.app/client.js"
+                data-repo="joeljang/joeljang.github.io"
+                data-repo-id="R_kgDOHON9Gg"
+                data-category="Blog Comments"
+                data-category-id="DIC_kwDOHON9Gs4C184E"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </div>
+    <div style="margin-top: 10px; font-size: 0.85em; color: #94a3b8;">
+    <span id="gc-total"></span> total views · <span id="gc-today"></span> views today
+    </div>
+
+    <script>
+    // Total views
+    fetch('https://joeljang.goatcounter.com/counter/world-models-for-robotics.json')
+        .then(res => res.json())
+        .then(data => {
+        document.getElementById('gc-total').textContent = data.count;
+        })
+        .catch(() => {
+        document.getElementById('gc-total').textContent = '—';
+        });
+
+    // Today's views
+    const today = new Date().toISOString().split('T')[0];
+    fetch(`https://joeljang.goatcounter.com/counter/world-models-for-robotics.json?start=${today}`)
+        .then(res => res.json())
+        .then(data => {
+        document.getElementById('gc-today').textContent = data.count;
+        })
+        .catch(() => {
+        document.getElementById('gc-today').textContent = '—';
+        });
+    </script>
+</div>
