@@ -289,32 +289,23 @@ permalink: /world-models-for-robotics
                 async>
         </script>
     </div>
+
     <div style="margin-top: 10px; font-size: 0.85em; color: #94a3b8;">
-    <span id="gc-total"></span> total views · <span id="gc-today"></span> views today
+    <span id="gc-total"></span> views
     </div>
 
     <script data-goatcounter="https://joeljang.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
     <script>
-    // Total views
-    fetch('https://joeljang.goatcounter.com/counter/world-models-for-robotics.json')
-        .then(res => res.json())
-        .then(data => {
-        document.getElementById('gc-total').textContent = data.count;
-        })
-        .catch(() => {
-        document.getElementById('gc-total').textContent = '—';
-        });
-
-    // Today's views
-    const today = new Date().toISOString().split('T')[0];
-    fetch(`https://joeljang.goatcounter.com/counter/world-models-for-robotics.json?start=${today}`)
-        .then(res => res.json())
-        .then(data => {
-        document.getElementById('gc-today').textContent = data.count;
-        })
-        .catch(() => {
-        document.getElementById('gc-today').textContent = '—';
-        });
+    window.addEventListener('load', function() {
+        fetch('https://joeljang.goatcounter.com/counter/%2Fworld-models-for-robotics.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('gc-total').textContent = data.count;
+            })
+            .catch(() => {
+                document.getElementById('gc-total').textContent = '—';
+            });
+    });
     </script>
 </div>
