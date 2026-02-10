@@ -1,5 +1,5 @@
 papers:
-  - title: "DreamZero: World Action Models are Zero-shot Policies"
+  - title: "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos"
     year: "2026"
     authors: "Shenyuan Gao*, William Liang*, Kaiyuan Zheng**, Ayaan Malik**, Seonghyeon Ye, Sihyun Yu, Wei-Cheng Tseung, Yuzhu Dong, K:aichun Mo, Chen-Hsuan Lin, Qianli Ma, Seungjun Nah, Loic Magne, Jiannan Xiang, yuqi Xie, Ruijie Zheng, Dantong Niu, You Liang Tan, KR Zentner, George Kurian, Suneel Indupuru, Pooya Jannaty, Jinwei Gu, Jun Zhang, Jitendra Malik, Pieter Abbeel, Ming-Yu Liu, Yuke Zhu†, <b><u>Joel Jang</u></b>†, Linxi \"Jim\" Fan†"
     venue: "Preprint"
