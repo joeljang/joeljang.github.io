@@ -1,6 +1,13 @@
 papers:
   - title: "DreamZero: World Action Models are Zero-shot Policies"
     year: "2026"
+    authors: "Shenyuan Gao*, William Liang*, Kaiyuan Zheng**, Ayaan Malik**, Seonghyeon Ye, Sihyun Yu, Wei-Cheng Tseung, Yuzhu Dong, K:aichun Mo, Chen-Hsuan Lin, Qianli Ma, Seungjun Nah, Loic Magne, Jiannan Xiang, yuqi Xie, Ruijie Zheng, Dantong Niu, You Liang Tan, KR Zentner, George Kurian, Suneel Indupuru, Pooya Jannaty, Jinwei Gu, Jun Zhang, Jitendra Malik, Pieter Abbeel, Ming-Yu Liu, Yuke Zhu†, <b><u>Joel Jang</u></b>†, Linxi \"Jim\" Fan†"
+    venue: "Preprint"
+    paper_pdf: "https://arxiv.org/abs/2602.06949"
+    code: "https://github.com/nvidia/DreamDojo"
+    selected: y
+
+  - title: "DreamZero: World Action Models are Zero-shot Policies"
     authors: "Seonghyeon Ye†, Yunhao Ge*, Kaiyuan Zheng*, Shenyuan Gao*, Sihyun Yu*, George Kurian*, Suneel Indupuru*, You Liang Tan*, Chuning Zhu, Jiannan Xiang, Ayaan Malik, Kyungmin Lee, William Liang, Nadun Ranawaka, Jiasheng Gu, Yinzhen Xu, Guanzhi Wang, Fengyuan Hu, Avnish Narayan, Johan Bjorck, Jing Wang, Gwanghyun Kim, Dantong Niu, Ruijie Zheng, Yuqi Xie, Jimmy Wu, Qi Wang, Ryan Julian, Danfei Xu, Yilun Du, Yevgen Chebotar, Scott Reed, Jan Kautz, Yuke Zhu†, Linxi \"Jim\" Fan†, <b><u>Joel Jang</u></b>†"
     venue: "Preprint"
     paper_pdf: "https://dreamzero0.github.io/DreamZero.pdf"
